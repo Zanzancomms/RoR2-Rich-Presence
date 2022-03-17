@@ -5,13 +5,13 @@ import time
 
 sys.path.append(os.path.abspath(os.path.join('python', 'packages')))
 sys.path.append(os.path.abspath(os.path.join('python')))
+import psutil
+import psutil._exceptions as ps_exceptions
 from discoIPC import ipc
-
-import processes
 
 
 def main():
-    output_log_txt_path = "{}\\AppData\\LocalLow\\Hopoo Games, LLC\\Risk of Rain 2\\output_log.txt".format(os.getenv('UserProfile'))
+    Player_log_path = "{}\\AppData\\LocalLow\\Hopoo Games, LLC\\Risk of Rain 2\\Player.log".format(os.getenv('UserProfile'))
 
     start_time = int(time.time())
     activity = {'details': 'Loading game',  # this is what gets modified and sent to Discord via discoIPC
@@ -20,26 +20,46 @@ def main():
                 'state': 'Not in lobby'}
     client_connected = False
     has_mention_not_running = False
-    process_scanner = processes.ProcessScanner()
 
     while True:
+        game_is_running = False
+        discord_is_running = False
         next_delay = 5
-        p_data = process_scanner.scan()
-        activity['timestamps']['start'] = p_data['ROR2']['time']
 
-        if p_data['ROR2']['running'] and p_data['Discord']['running']:
+        for process in psutil.process_iter():
+            if game_is_running and discord_is_running:
+                break
+            else:
+                try:
+                    with process.oneshot():
+                        p_name = process.name()
+
+                        if p_name == 'Risk of Rain 2.exe':
+                            start_time = int(process.create_time())
+                            activity['timestamps']['start'] = start_time
+                            game_is_running = True
+                        elif 'Discord' in p_name:
+                            discord_is_running = True
+                except ps_exceptions.NoSuchProcess:
+                    pass
+                except ps_exceptions.AccessDenied:
+                    pass
+
+                time.sleep(0.001)
+
+        if game_is_running and discord_is_running:
             if not client_connected:
                 # connects to Discord
                 client = ipc.DiscordIPC('566395208858861569')
                 client.connect()
                 client_connected = True
 
-            with open(output_log_txt_path, 'r', errors='replace') as output_log_txt:
-                output_log = output_log_txt.readlines()
+            with open(Player_log_path, 'r', errors='replace') as Player_log:
+                Player = Player_log.readlines()
 
             old_details_state = copy.copy((activity['details'], activity['state']))
 
-            for line in output_log:
+            for line in Player:
                 if 'Loaded scene' in line:
                     activity = switch_image_mode(activity)
 
@@ -68,10 +88,6 @@ def main():
                         activity = switch_image_mode(activity, ('bazaar', 'Hidden Realm: Bazaar Between Time'))
                     elif 'foggyswamp' in line:
                         activity = switch_image_mode(activity, ('foggyswamp', 'Wetland Aspect'))
-                    elif 'wispgraveyard' in line:
-                        activity = switch_image_mode(activity, ('wispgraveyard', 'Scorched Acres'))
-                    elif 'goldshores' in line:
-                        activity = switch_image_mode(activity, ('goldshores', 'Gilded Coast'))
 
                 elif 'lobby creation succeeded' in line:
                     activity['details'] = "In lobby"
@@ -105,7 +121,7 @@ def main():
 
             # send everything to discord
             client.update_activity(activity)
-        elif not p_data['Discord']['running']:
+        elif not discord_is_running:
             print("{}\nDiscord isn't running\n")
         else:
             if client_connected:
@@ -136,9 +152,6 @@ def switch_image_mode(temp_activity, stage=()):
         temp_activity['assets']['large_image'] = stage[0]
         temp_activity['assets']['large_text'] = stage[1]
         temp_activity['details'] = stage[1]
-        
-        if temp_activity['state'] == "Not in lobby":
-            temp_activity['state'] = "Spectating"
 
     return temp_activity
 
