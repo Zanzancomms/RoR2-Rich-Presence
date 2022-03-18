@@ -5,8 +5,12 @@ Discord Rich Presence for Risk of Rain (thrown together from [Celeste Rich Prese
 
 ![Screenshot](screenshot.png)
 
+new features
+
+![Screenshot](image.png)
+
 (The actual program is nowhere near as nice looking as this)
 
 ## Download and running
-[RoR2_Rich_Presence_v1.2.zip](https://github.com/Zanzancomms/RoR2-Rich-Presence/releases/download/1.2/RoR2-Rich-Presence-1.2.zip) (8.6 MB)  
+[RoR2_Rich_Presence_v2.0.zip](https://github.com/Zanzancomms/RoR2-Rich-Presence/releases/download/1.2/RoR2-Rich-Presence-2.0.zip) (8.6 MB)  
 Run by running `run.bat` at the same time as the game.
