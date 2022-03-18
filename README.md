@@ -6,6 +6,8 @@ Discord Rich Presence for Risk of Rain (thrown together from [Celeste Rich Prese
 ![Screenshot](screenshot.png)
 
 new features
+-added new stages
+-shows survivor in the small image
 
 ![Screenshot](image.png)
 
