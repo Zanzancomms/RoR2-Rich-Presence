@@ -1,4 +1,4 @@
-[![Github all releases](https://img.shields.io/github/downloads/Kataiser/RoR2-Rich-Presence/total.svg)](https://GitHub.com/Kataiser/RoR2-Rich-Presence/releases/)
+forked from Kataiser/RoR2-Rich-Presence [![Github all releases](https://img.shields.io/github/downloads/Kataiser/RoR2-Rich-Presence/total.svg)](https://GitHub.com/Kataiser/RoR2-Rich-Presence/releases/)
 
 # RoR2 Rich Presence
 Discord Rich Presence for Risk of Rain (thrown together from [Celeste Rich Presence](https://github.com/Kataiser/celeste-rich-presence), which itself is thrown together from an older version of [TF2 Rich Presence](https://github.com/Kataiser/tf2-rich-presence))
