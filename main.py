@@ -93,17 +93,14 @@ def main():
                     activity['assets']['small_image'] = 'bandit'
                     activity['assets']['small_text'] = 'Bandit'
 
-                if 'survivorIndex=3' in line:
-                    activity['assets']['small_image'] = 'sniper'
-                    activity['assets']['small_text'] = 'Sniper'
-
                 if 'survivorIndex=2' in line:
                     activity['assets']['small_image'] = 'han-d'
                     activity['assets']['small_text'] = 'HAN-D'
 
                 if 'survivorIndex=3' in line:
-                    activity['assets']['small_image'] = 'han-d'
-                    activity['assets']['small_text'] = 'HAN-D'
+                    activity['assets']['small_image'] = 'sniper'
+                    activity['assets']['small_text'] = 'Sniper'
+
 
                 if 'survivorIndex=9' in line:
                     activity['assets']['small_image'] = 'acrid'
@@ -121,10 +118,6 @@ def main():
                     activity['assets']['small_image'] = 'void_fiend'
                     activity['assets']['small_text'] = '「V??oid Fiend』'
 
-                if 'survivorIndex=19' in line:
-                    activity['assets']['small_image'] = 'void_fiend'
-                    activity['assets']['small_text'] = '「V??oid Fiend』'
-                    
 
                 if 'Loaded scene' in line:
                     activity = switch_image_mode(activity)
@@ -187,72 +180,6 @@ def main():
                     activity['state'] = "Not in lobby"
                     activity = switch_image_mode(activity)
                     
-                if 'survivorIndex=8' in line:
-                    activity['assets']['small_image'] = 'commando'
-                    activity['assets']['small_text'] = 'Commando'
-
-                if 'survivorIndex=10' in line:
-                    activity['assets']['small_image'] = 'engineer'
-                    activity['assets']['small_text'] = 'Engineer'
-
-                if 'survivorIndex=12' in line:
-                    activity['assets']['small_image'] = 'huntress'
-                    activity['assets']['small_text'] = 'Huntress'
-
-                if 'survivorIndex=16' in line:
-                    activity['assets']['small_image'] = 'toolbot'
-                    activity['assets']['small_text'] = 'MUL-T'
-
-                if 'survivorIndex=14' in line:
-                    activity['assets']['small_image'] = 'mage'
-                    activity['assets']['small_text'] = 'Artificer'
-
-                if 'survivorIndex=15' in line:
-                    activity['assets']['small_image'] = 'merc'
-                    activity['assets']['small_text'] = 'Mercenary'
-
-                if 'survivorIndex=17' in line:
-                    activity['assets']['small_image'] = 'treebot'
-                    activity['assets']['small_text'] = 'REX'
-
-                if 'survivorIndex=6' in line:
-                    activity['assets']['small_image'] = 'bandit'
-                    activity['assets']['small_text'] = 'Bandit'
-
-                if 'survivorIndex=3' in line:
-                    activity['assets']['small_image'] = 'sniper'
-                    activity['assets']['small_text'] = 'Sniper'
-
-                if 'survivorIndex=2' in line:
-                    activity['assets']['small_image'] = 'han-d'
-                    activity['assets']['small_text'] = 'HAN-D'
-
-                if 'survivorIndex=3' in line:
-                    activity['assets']['small_image'] = 'han-d'
-                    activity['assets']['small_text'] = 'HAN-D'
-
-                if 'survivorIndex=9' in line:
-                    activity['assets']['small_image'] = 'acrid'
-                    activity['assets']['small_text'] = 'Acrid'
-
-                if 'survivorIndex=7' in line:
-                    activity['assets']['small_image'] = 'captain'
-                    activity['assets']['small_text'] = 'Captain'
-                    
-                if 'survivorIndex=18' in line:
-                    activity['assets']['small_image'] = 'railgunner'
-                    activity['assets']['small_text'] = 'Railgunner'
-
-                if 'survivorIndex=19' in line:
-                    activity['assets']['small_image'] = 'void_fiend'
-                    activity['assets']['small_text'] = '「V??oid Fiend』'
-
-                if 'survivorIndex=19' in line:
-                    activity['assets']['small_image'] = 'void_fiend'
-                    activity['assets']['small_text'] = '「V??oid Fiend』'
-                    
-
-
 
 
             if time.time() - start_time < 10:
