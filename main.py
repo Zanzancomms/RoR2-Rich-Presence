@@ -97,6 +97,10 @@ def main():
                 if 'blackbeach2' in line:
                     activity = switch_image_mode(activity, ('blackbeach2', 'Black Beach 2, Distant Roost'))
 
+                if 'survivorIndex=1' in line:
+                    activity['assets']['small_image'] = 'chef'
+                    activity['assets']['small_text'] = 'Chef'
+
                 if 'survivorIndex=8' in line:
                     activity['assets']['small_image'] = 'commando'
                     activity['assets']['small_text'] = 'Commando'
@@ -108,6 +112,10 @@ def main():
                 if 'survivorIndex=12' in line:
                     activity['assets']['small_image'] = 'huntress'
                     activity['assets']['small_text'] = 'Huntress'
+
+                if 'survivorIndex=13' in line:
+                    activity['assets']['small_image'] = 'loader'
+                    activity['assets']['small_text'] = 'Loader'
 
                 if 'survivorIndex=16' in line:
                     activity['assets']['small_image'] = 'toolbot'
@@ -137,7 +145,6 @@ def main():
                     activity['assets']['small_image'] = 'sniper'
                     activity['assets']['small_text'] = 'Sniper'
 
-
                 if 'survivorIndex=9' in line:
                     activity['assets']['small_image'] = 'acrid'
                     activity['assets']['small_text'] = 'Acrid'
@@ -153,10 +160,6 @@ def main():
                 if 'survivorIndex=19' in line:
                     activity['assets']['small_image'] = 'void_fiend'
                     activity['assets']['small_text'] = 'V??oid Fiend'
-
-                if 'survivorIndex=1' in line:
-                    activity['assets']['small_image'] = 'chef'
-                    activity['assets']['small_text'] = 'Chef'
 
 
                 if 'Loaded scene' in line:
