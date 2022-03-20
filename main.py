@@ -252,6 +252,7 @@ def main():
 
             if time.time() - start_time < 10:
                 activity['details'] = "Loading game"
+                activity = switch_image_mode(activity, ('title', 'Loading game'))
 
             if old_details_state != (activity['details'], activity['state'], activity['assets']['small_image'], activity['assets']['small_text']):
                 next_delay = 2
@@ -299,7 +300,7 @@ def main():
 
 def switch_image_mode(temp_activity, stage=()):
     if stage == ():
-        temp_activity['assets']['large_image'] = 'logo'
+        temp_activity['assets']['large_image'] = 'title'
         temp_activity['assets']['large_text'] = 'Risk of Rain 2'
     else:
         temp_activity['assets']['large_image'] = stage[0]

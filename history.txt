@@ -103,3 +103,13 @@
 {'details': 'Eclipse', 'timestamps': {'start': 1647802835}, 'assets': {'small_image': 'commando', 'small_text': 'Commando', 'large_image': 'logo', 'large_text': 'Risk of Rain 2'}, 'state': 'Singleplayer'}
 {'details': 'Main menu', 'timestamps': {'start': 1647802835}, 'assets': {'small_image': 'commando', 'small_text': 'Commando', 'large_image': 'logo', 'large_text': 'Risk of Rain 2'}, 'state': 'Not in lobby'}
 {'details': 'Main Menu', 'timestamps': {'start': 1647802835}, 'assets': {'small_image': 'commando', 'small_text': 'Commando', 'large_image': 'title', 'large_text': 'Main Menu'}, 'state': 'Not in lobby'}
+{'details': 'In Lobby', 'timestamps': {'start': 1647802835}, 'assets': {'small_image': 'commando', 'small_text': 'Commando', 'large_image': 'lobby', 'large_text': 'In Lobby'}, 'state': 'Singleplayer'}
+{'details': 'Loading game', 'timestamps': {'start': 1647813364}, 'assets': {'small_image': ' ', 'small_text': 'Risk of Rain 2', 'large_image': 'logo', 'large_text': 'Risk of Rain 2'}, 'state': 'Not in lobby'}
+{'details': 'Loading game', 'timestamps': {'start': 1647813375}, 'assets': {'small_image': ' ', 'small_text': 'Risk of Rain 2', 'large_image': 'logo', 'large_text': 'Risk of Rain 2'}, 'state': 'Not in lobby'}
+{'details': 'Main Menu', 'timestamps': {'start': 1647813364}, 'assets': {'small_image': ' ', 'small_text': 'Risk of Rain 2', 'large_image': 'title', 'large_text': 'Main Menu'}, 'state': 'Not in lobby'}
+{'details': 'Loading game', 'timestamps': {'start': 1647813524}, 'assets': {'small_image': ' ', 'small_text': 'Risk of Rain 2', 'large_image': 'title', 'large_text': 'Loading game'}, 'state': 'Not in lobby'}
+{'details': 'Loading game', 'timestamps': {'start': 1647813524}, 'assets': {'small_image': ' ', 'small_text': 'Risk of Rain 2', 'large_image': 'logo', 'large_text': 'Risk of Rain 2'}, 'state': 'Not in lobby'}
+{'details': 'Loading game', 'timestamps': {'start': 1647813671}, 'assets': {'small_image': ' ', 'small_text': 'Risk of Rain 2', 'large_image': 'title', 'large_text': 'Loading game'}, 'state': 'Not in lobby'}
+{'details': 'Loading game', 'timestamps': {'start': 1647813671}, 'assets': {'small_image': ' ', 'small_text': 'Risk of Rain 2', 'large_image': 'title', 'large_text': 'Risk of Rain 2'}, 'state': 'Not in lobby'}
+{'details': 'Main Menu', 'timestamps': {'start': 1647813671}, 'assets': {'small_image': ' ', 'small_text': 'Risk of Rain 2', 'large_image': 'title', 'large_text': 'Main Menu'}, 'state': 'Not in lobby'}
+{'details': 'In Lobby', 'timestamps': {'start': 1647813671}, 'assets': {'small_image': 'commando', 'small_text': 'Commando', 'large_image': 'lobby', 'large_text': 'In Lobby'}, 'state': 'Singleplayer'}
