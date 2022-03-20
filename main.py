@@ -60,7 +60,43 @@ def main():
             old_details_state = copy.copy((activity['details'], activity['state'], activity['assets']['small_image'], activity['assets']['small_text']))
 
             for line in Player:
+
+                if 'lobby' in line:
+                    activity = switch_image_mode(activity, ('lobby', 'In Lobby'))
+
+                if 'title' in line:
+                    activity = switch_image_mode(activity, ('title', 'Main Menu'))
+
+                if 'infinitetowerworld' in line:
+                    activity = switch_image_mode(activity, (' ', 'Simulacrum'))	
                     
+                if 'eclipseworld' in line:
+                    activity = switch_image_mode(activity, (' ', 'Eclipse'))	
+
+                if 'itancientloft' in line:
+                    activity = switch_image_mode(activity, ('itancientloft', 'The Simulacrum: Ancient Loft Threat Simulation'))
+
+                if 'itdampcave' in line:
+                    activity = switch_image_mode(activity, ('itdampcave', 'The Simulacrum: Abyssal Depths Threat Simulation'))
+
+                if 'itfrozenwall' in line:
+                    activity = switch_image_mode(activity, ('itfrozenwall', 'The Simulacrum: Rallypoint Delta Threat Simulation'))
+
+                if 'itgolemplains' in line:
+                    activity = switch_image_mode(activity, ('itgolemplains', 'The Simulacrum: Titanic Plains Threat Simulation'))
+
+                if 'itgoolake' in line:
+                    activity = switch_image_mode(activity, ('itgoolake', 'The Simulacrum: Abandoned Aqueduct Threat Simulation'))
+
+                if 'itmoon' in line:
+                    activity = switch_image_mode(activity, ('itmoon', 'The Simulacrum: Moon of Petrichor V Threat Simulation'))
+
+                if 'itskymeadow' in line:
+                    activity = switch_image_mode(activity, ('itskymeadow', 'The Simulacrum: Sky Meadow Threat Simulation'))
+
+                if 'blackbeach2' in line:
+                    activity = switch_image_mode(activity, ('blackbeach2', 'Black Beach 2, Distant Roost'))
+
                 if 'survivorIndex=8' in line:
                     activity['assets']['small_image'] = 'commando'
                     activity['assets']['small_text'] = 'Commando'
@@ -116,7 +152,11 @@ def main():
 
                 if 'survivorIndex=19' in line:
                     activity['assets']['small_image'] = 'void_fiend'
-                    activity['assets']['small_text'] = '「V??oid Fiend』'
+                    activity['assets']['small_text'] = 'V??oid Fiend'
+
+                if 'survivorIndex=1' in line:
+                    activity['assets']['small_image'] = 'chef'
+                    activity['assets']['small_text'] = 'Chef'
 
 
                 if 'Loaded scene' in line:
@@ -125,51 +165,81 @@ def main():
                     if 'title' in line:
                         activity['details'] = "Main menu"
                         activity['state'] = "Not in lobby"
+                        activity = switch_image_mode(activity, ('title', 'Main Menu'))
+
                     elif 'lobby loadSceneMode=Single' in line:
                         activity['details'] = "In lobby"
                         activity['state'] = "Singleplayer"
+                        activity = switch_image_mode(activity, ('lobby', 'In lobby'))
                     elif 'crystalworld' in line:
                         activity['state'] = "Prismatic Trials"
 
                     elif 'golemplains' in line:
                         activity = switch_image_mode(activity, ('golemplains', 'Golem Plains, Titanic Plains'))
+                        
                     elif 'blackbeach' in line:
                         activity = switch_image_mode(activity, ('blackbeach', 'Black Beach, Distant Roost'))
-                    elif 'blackbeach2' in line:
-                        activity = switch_image_mode(activity, ('blackbeach2', 'Black Beach, Distant Roost'))
+                        
                     elif 'goolake' in line:
                         activity = switch_image_mode(activity, ('goolake', 'Goo Lake, Abandoned Aqueduct'))
+                        
                     elif 'frozenwall' in line:
                         activity = switch_image_mode(activity, ('frozenwall', 'Frozen Wall, Rallypoint Delta'))
+                        
                     elif 'dampcavesimple' in line:
                         activity = switch_image_mode(activity, ('dampcavesimple', 'Tectonic Relics, Abyssal Depths'))
+                        
                     elif 'mysteryspace' in line:
                         activity = switch_image_mode(activity, ('mysteryspace', 'Hidden Realm: A Moment, Fractured'))
+                        
                     elif 'bazaar' in line:
                         activity = switch_image_mode(activity, ('bazaar', 'Hidden Realm: Bazaar Between Time'))
+                        
+                    elif 'artifactworld' in line:
+                        activity = switch_image_mode(activity, ('artifactworld', 'Hidden Realm: Bulwarks Ambry'))
+                        
+                    elif 'arena' in line:
+                        activity = switch_image_mode(activity, ('arena', 'Hidden Realm: Void Fields, Cosmic Prison'))
+                        
+                    elif 'voidstage' in line:
+                        activity = switch_image_mode(activity, ('voidstage', 'Hidden Realm: Void Locus, Cell IIIVIIIIIILVIIIVLVILIVLLLVVVILIVLI'))
+                        
+                    elif 'voidraid' in line:
+                        activity = switch_image_mode(activity, ('voidraid', 'The Planetarium, Cell V'))
+                        
+                    elif 'limbo' in line:
+                        activity = switch_image_mode(activity, ('limbo', 'Hidden Realm: A Moment, Whole'))
+                        
+                    elif 'goldshores' in line:
+                        activity = switch_image_mode(activity, ('goldshores', 'Hidden Realm: Gilded Coast'))
+                        
                     elif 'foggyswamp' in line:
                         activity = switch_image_mode(activity, ('foggyswamp', 'Foggy Swamp, Wetland Aspect'))
+                        
                     elif 'wispgraveyard' in line:
                         activity = switch_image_mode(activity, ('wispgraveyard', 'Wisp Graveyard, Scorched Acres'))
+                        
                     elif 'shipgraveyard' in line:
                         activity = switch_image_mode(activity, ('shipgraveyard', 'Ship Graveyard, Sirens Call'))
+                        
                     elif 'skymeadow' in line:
                         activity = switch_image_mode(activity, ('skymeadow', 'Sprite Fields, Sky Meadow'))
+                        
                     elif 'snowyforest' in line:
                         activity = switch_image_mode(activity, ('snowyforest', 'Siphoned Forest'))
+                        
                     elif 'sulfurpools' in line:
                         activity = switch_image_mode(activity, ('sulfurpools', 'Sulfur Pools'))
+                        
                     elif 'rootjungle' in line:
                         activity = switch_image_mode(activity, ('rootjungle', 'Root Jungle, Sundered Grove'))
+                        
                     elif 'ancientloft' in line:
                         activity = switch_image_mode(activity, ('ancientloft', 'Ancient Loft, Aphelian Sanctuary'))
-                    elif 'moon' in line:
-                        activity = switch_image_mode(activity, ('moon', 'Commencement , Moon of Petrichor V'))
-
-                    elif 'lobby' in line:
-                        activity = switch_image_mode(activity, ('lobby', 'Lobby'))
-                    elif 'title' in line:
-                        activity = switch_image_mode(activity, ('title', 'title'))
+                        
+                    elif 'moon2' in line:
+                        activity = switch_image_mode(activity, ('moon2', 'Commencement , Moon of Petrichor V'))
+                       
 
                 elif 'lobby creation succeeded' in line:
                     activity['details'] = "In lobby"
@@ -179,8 +249,6 @@ def main():
                     activity['details'] = "Main menu"
                     activity['state'] = "Not in lobby"
                     activity = switch_image_mode(activity)
-                    
-
 
             if time.time() - start_time < 10:
                 activity['details'] = "Loading game"
