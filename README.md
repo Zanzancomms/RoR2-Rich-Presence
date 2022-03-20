@@ -5,6 +5,14 @@ Discord Rich Presence for Risk of Rain (thrown together from [Celeste Rich Prese
 
 ![Screenshot](screenshot.png)
 
+new features
+
+-added new stages
+-shows survivor in the small image
+-survivors of the void support
+
+![Screenshot](image.png)
+
 (The actual program is nowhere near as nice looking as this)
 
 ## Download and running
